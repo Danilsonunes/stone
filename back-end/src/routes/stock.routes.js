@@ -16,7 +16,4 @@ const stockController = require("../controllers/stock.controller");
 // ==> Rota responsável por listar todos os 'Stock': (GET): localhost:3000/api/stock
 router.get("/stock", stockController.listAllStock);
 
-// ==> Rota responsável por listar  as 'maquininhas entreges en 6 meses ': (GET): localhost:3000/api/stock
-router.get("/stock", stockController.listMaquinasMeses);
-
 module.exports = router;
