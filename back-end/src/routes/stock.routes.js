@@ -14,6 +14,6 @@ const stockController = require("../controllers/stock.controller");
 // router.post("/stock", productController.createProduct);
 
 // ==> Rota responsável por listar todos os 'Stock': (GET): localhost:3000/api/stock
-router.get("/stock", stockController.listAllStock);
+router.get("/stock/:polo", stockController.listAllStock);
 
 module.exports = router;

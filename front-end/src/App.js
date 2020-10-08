@@ -7,40 +7,86 @@ import "./App.css";
 //import TutorialsList from "./components/tutorial-list.component";
 
 const App = () => {
-
   const [todos, setTodos] = useState([])
-
+  let resultado = []
   const getTodos = async () => {
     try {
-
       const response = await fetch('http://localhost:4000/api/stock')
-      const jsonData = await response.json();
+      const jsonData = await response.json()
 
-      setTodos(jsonData)
-      console.log(jsonData)
+
+
+      setTodos(jsonData.all)
+
+
+      resultado = resultado.concat(jsonData.all, jsonData.ventas)
+
+      console.log(resultado) // Agora sim concatena tudo e salva de volta no `resultado`
+
     } catch (err) {
       console.error(err.message)
     }
-
   }
 
-
   useEffect(() => {
-    getTodos();
+    getTodos()
   }, [])
 
-  console.log(todos)
+
+
+
+  const todosElemento = todos.map(todo => (
+    <p key={todo.id}>
+      {todo.stock}
+    </p>
+
+  ))
+
+
   return (
-    <Fragment>
-      {"algo"}
-      {todos.map(todo => (
-        <p>
-          {todo.all.stock}
-        </p>
-      ))}
-    </Fragment>
+    <>
+      {'algo'}
+      {todosElemento}
+
+    </>
   )
 }
+
+// const App = () => {
+
+//   const [todos, setTodos] = useState([])
+
+//   const getTodos = async () => {
+//     try {
+
+//       const response = await fetch('http://localhost:4000/api/stock')
+//       const jsonData = await response.json();
+
+//       setTodos(jsonData.all)
+//       console.log(jsonData)
+//     } catch (err) {
+//       console.error(err.message)
+//     }
+
+//   }
+
+
+//   useEffect(() => {
+//     getTodos();
+//   }, [])
+
+//   console.log(todos)
+//   return (
+//     <Fragment>
+//       {"algo"}
+//       {todos.map(todo => (
+//         <p>
+//           {todo.all}
+//         </p>
+//       ))}
+//     </Fragment>
+//   )
+// }
 // <div>
 //   <nav className="navbar navbar-expand navbar-dark bg-dark">
 //     <a href="/stock" className="navbar-brand">

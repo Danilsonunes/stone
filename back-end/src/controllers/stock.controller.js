@@ -1,4 +1,4 @@
-const db = require("../config/database");
+﻿const db = require("../config/database");
 
 
 // ==> Método responsável por listar todos os 'Stocks':
@@ -27,3 +27,16 @@ exports.listAllStock = async (req, res) => {
     remainingDays: dias.rows,
   });
 };
+
+function StatusColor({ count }) {
+  const statusDoTrocinhoLaQueNaoLembroJa = (count) => {
+    if (count < 14) { return 'red' } 
+    if (count > 14) { return 'green' }
+    return 'gray'
+  }
+  const colorClass = statusDoTrocinhoLaQueNaoLembroJa(count)
+
+  return (
+    <div className={colorClass}>{count}</div>
+  )
+}
