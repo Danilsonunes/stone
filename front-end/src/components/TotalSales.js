@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-//import "./App.css";
+//import props from "./Home";
 
 const TotalSales = () => {
   const [todos, setTodos] = useState([]);
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/stock");
+      const response = await fetch(`http://localhost:4000/api/stock/MANAUS`);
       const jsonData = await response.json();
 
       setTodos(jsonData.ventas);
@@ -21,7 +21,7 @@ const TotalSales = () => {
   }, []);
 
   const todosElemento = todos.map((todo) => (
-    <p key={todo.id}>{todo.maquinas_vendidas_6_meses}</p>
+    <p key={todo.maquinas_vendidas_6_meses}>{todo.maquinas_vendidas_6_meses}</p>
   ));
 
   return (

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-//import "./App.css";
+//import props from "./Home";
 
 const StockNormal = () => {
   const [todos, setTodos] = useState([]);
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/stock");
+      const response = await fetch(`http://localhost:4000/api/stock/MANAUS`);
       const jsonData = await response.json();
 
       setTodos(jsonData.stockNormal);
@@ -21,7 +21,7 @@ const StockNormal = () => {
   }, []);
 
   const todosElemento = todos.map((todo) => (
-    <p key={todo.id}>{todo.estoque_normal_14_dias}</p>
+    <p key={todo.estoque_normal_14_dias}>{todo.estoque_normal_14_dias}</p>
   ));
 
   return (

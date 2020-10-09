@@ -1,4 +1,5 @@
 ﻿const db = require("../config/database");
+const stock = require("node-postgres-patch");
 
 // ==> Método responsável por listar todos os 'Stocks':
 
@@ -31,4 +32,17 @@ exports.listAllStock = async (req, res) => {
     stockNormal: normal.rows,
     remainingDays: dias.rows,
   });
+};
+
+//==> Método responsável por adicionar mais  'Stocks' no polo:
+exports.AddStock = async (req, res) => {
+  const polo = req.params.polo;
+  const stockjson = req.body;
+  const stock = JSON.stringify(stockjson);
+  console.log(stock);
+  const allStock = await db.query(
+    "UPDATE estoque SET stock = $1 WHERE polo LIKE '%' || $2 || '%'",
+    [stock, polo]
+  );
+  res.status(200).send(console.log("estoque criado" + allStock.rows));
 };

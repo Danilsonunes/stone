@@ -31,6 +31,10 @@
   color: #61dafb;
 }
 
+.form-control {
+  width: 80%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
