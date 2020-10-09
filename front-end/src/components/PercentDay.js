@@ -24,11 +24,6 @@ const PercentDay = () => {
     <p key={todo.promedio_x_dia}>{todo.promedio_x_dia}</p>
   ));
 
-  return (
-    <>
-      {"Percent by day"}
-      {todosElemento}
-    </>
-  );
+  return <>{todosElemento}</>;
 };
 export default PercentDay;

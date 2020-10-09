@@ -1,8 +1,8 @@
 /**
- * Arquivo: server.js
- * Descrição: arquivo responsável por toda a configuração e execução da aplicação.
- * Data: 02/03/2020
- * Author: Danilson Nunes
+ * Archivo: server.js
+ * Descriocion: archiivo responsable por toda a configuracion y execucion de la aplicacion
+ * Fecha: 01/10/2020
+ * Autor: Danilson Nunes
  */
 
 const app = require("./src/app");

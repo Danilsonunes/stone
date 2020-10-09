@@ -24,11 +24,6 @@ const StockNormal = () => {
     <p key={todo.estoque_normal_14_dias}>{todo.estoque_normal_14_dias}</p>
   ));
 
-  return (
-    <>
-      {"Normal Stock"}
-      {todosElemento}
-    </>
-  );
+  return <>{todosElemento}</>;
 };
 export default StockNormal;

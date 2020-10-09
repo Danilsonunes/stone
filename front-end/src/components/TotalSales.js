@@ -24,11 +24,6 @@ const TotalSales = () => {
     <p key={todo.maquinas_vendidas_6_meses}>{todo.maquinas_vendidas_6_meses}</p>
   ));
 
-  return (
-    <>
-      {"Sales last 6 monts"}
-      {todosElemento}
-    </>
-  );
+  return <>{todosElemento}</>;
 };
 export default TotalSales;

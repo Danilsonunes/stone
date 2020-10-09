@@ -1,5 +1,11 @@
-﻿const db = require("../config/database");
-const stock = require("node-postgres-patch");
+﻿/*
+ * archivo: controllers/stock.controller.js
+ * descripcion: archivo responsable de de la logica de la API .
+ * fecha: 01/10/2020
+ * autor: Danilson Nunes.
+ */
+
+const db = require("../config/database");
 
 // ==> Método responsável por listar todos os 'Stocks':
 
@@ -37,8 +43,8 @@ exports.listAllStock = async (req, res) => {
 //==> Método responsável por adicionar mais  'Stocks' no polo:
 exports.AddStock = async (req, res) => {
   const polo = req.params.polo;
-  const stockjson = req.body;
-  const stock = JSON.stringify(stockjson);
+  const stock = req.body.stock;
+
   console.log(stock);
   const allStock = await db.query(
     "UPDATE estoque SET stock = $1 WHERE polo LIKE '%' || $2 || '%'",

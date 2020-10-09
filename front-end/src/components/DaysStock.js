@@ -25,11 +25,6 @@ const DaysStock = () => {
     <p key={todo.dias_de_estoque}>{todo.dias_de_estoque}</p>
   ));
 
-  return (
-    <>
-      {"Stock left for days"}
-      {todosElemento}
-    </>
-  );
+  return <>{todosElemento}</>;
 };
 export default DaysStock;

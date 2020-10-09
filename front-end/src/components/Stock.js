@@ -24,11 +24,6 @@ const Stock = () => {
     <p key={todo.stock}>{todo.stock}</p>
   ));
 
-  return (
-    <>
-      {"Stock"}
-      {todosElemento}
-    </>
-  );
+  return <>{todosElemento}</>;
 };
 export default Stock;
